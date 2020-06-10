@@ -1,6 +1,6 @@
 import {
     Message
-} from "./message.js"
+} from "./messages/message.js"
 
 class MessageManager {
     constructor(receivers) {
@@ -12,10 +12,17 @@ class MessageManager {
         this.messages.push(message);
     }
 
-    advance() {
+    handleFrame() {
+        var undroppedMessages = [];
         this.messages.forEach(function(message) {
-            message.advance();
+            if (message.dropped) {
+                message.cleanup();
+            } else {
+                message.handleFrame();
+                undroppedMessages.push(message);
+            }
         });
+        this.messages = undroppedMessages;
         this.deliverArrivals();
     }
 

@@ -1,0 +1,26 @@
+{
+  "name": "raft-consensus",
+  "version": "1.0.0",
+  "description": "A interactive simulation of the Raft algorithm using a JavaScript animation.",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshagrwl/Raft-Consensus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshagrwl/Raft-Consensus/issues"
+  },
+  "homepage": "https://github.com/harshagrwl/Raft-Consensus#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
